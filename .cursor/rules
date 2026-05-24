@@ -1,0 +1,32 @@
+This is a personal portfolio project built with Next.js App Router, TypeScript, Tailwind CSS, shadcn/ui, Zustand, Jest, and React Testing Library.
+
+Use English for:
+
+- code
+- variables
+- functions
+- components
+- file names
+- folders
+- comments
+- commit messages
+
+Keep the code simple, clean, and maintainable.
+
+Use reusable components.
+
+Prefer functional React components and hooks.
+
+Follow modern Next.js App Router and TypeScript best practices.
+
+Prefer composition over complex abstractions.
+
+Avoid over-engineering.
+
+Do not modify many files at once unless necessary.
+
+Before large changes, explain the plan first.
+
+Keep folder structure organized and scalable.
+
+Prefer responsive and accessible UI.
