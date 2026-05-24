@@ -1,17 +1,14 @@
 # Alex Portfolio
 
-Personal portfolio built with Next.js App Router, TypeScript, Tailwind CSS, shadcn/ui, Zustand, Jest, and React Testing Library.
+Modern developer portfolio built with Next.js App Router and TypeScript.
 
-## Tech Stack
+## Features
 
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
-- shadcn/ui
-- Zustand
-- Jest
-- React Testing Library
+- Responsive design
+- Reusable UI components
+- Dark mode support
+- Accessible and scalable architecture
+- Modern frontend development practices
 
 ## Getting Started
 
