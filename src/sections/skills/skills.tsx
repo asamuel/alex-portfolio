@@ -11,8 +11,8 @@ export const SkillSection = () => {
         <div className="max-w-2xl">
           <p className="font-mono text-sm uppercase tracking-[0.18em] text-accent">Skills</p>
 
-          <h2 className="mt-4 font-mono text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Technologies I use to build secure and scalable systems.
+          <h2 className="mt-4 font-mono text-3xl font-bold tracking-tight text-foreground sm:text-3xl">
+            Technologies I use to build secure and scalable.
           </h2>
         </div>
 

@@ -1,4 +1,5 @@
 import { AboutSection } from '@/sections/about/about';
+import { ExperienceSection } from '@/sections/experience/experience';
 import { HeroSection } from '@/sections/hero/hero';
 import { SkillSection } from '@/sections/skills/skills';
 
@@ -8,6 +9,7 @@ const HomePage = () => {
       <HeroSection />
       <AboutSection />
       <SkillSection />
+      <ExperienceSection />
     </main>
   );
 };
