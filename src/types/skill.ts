@@ -5,4 +5,5 @@ export interface Skill {
   title: string;
   description: string;
   items: TechItem[];
+  
 }
