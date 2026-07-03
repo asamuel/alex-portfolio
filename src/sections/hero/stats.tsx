@@ -2,7 +2,7 @@ import { profile } from '@/constants/profiles';
 
 export const HeroStats = () => {
   return (
-    <div className="mt-16 grid grid-cols-2 gap-4 border-t border-border pt-6 sm:mt-20 sm:grid-cols-4 sm:gap-6 sm:pt-6">
+    <div className="mt-16 grid grid-cols-2 gap-4 pt-6 sm:mt-20 sm:grid-cols-4 sm:gap-6 sm:pt-6">
       {profile.stats.map((stat) => {
         return (
           <div

@@ -21,7 +21,7 @@ export const AboutSection = () => {
             {profile.focusAreas.map((area) => (
               <div
                 key={area}
-                className="rounded-lg border border-border bg-card px-4 py-4 font-mono text-sm text-foreground/85 transition-colors hover:border-accent"
+                className="rounded-md border border-border bg-card px-4 py-4 font-mono text-sm text-foreground/85 transition-colors hover:border-accent"
               >
                 {area}
               </div>
