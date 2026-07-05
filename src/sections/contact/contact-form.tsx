@@ -3,20 +3,12 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Send } from 'lucide-react';
 import { useForm } from 'react-hook-form';
-import { z } from 'zod';
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useState } from 'react';
-
-const contactSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters.'),
-  email: z.string().email('Please enter a valid email.'),
-  message: z.string().min(10, 'Message must be at least 10 characters.'),
-});
-
-type ContactFormValues = z.infer<typeof contactSchema>;
+import { contactSchema, type ContactFormValues } from '@/validations/contact-schema';
 
 export const ContactForm = () => {
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -36,9 +28,8 @@ export const ContactForm = () => {
   });
 
   const onSubmit = async (values: ContactFormValues) => {
-    console.log(values);
-
     setStatus('idle');
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -69,6 +60,14 @@ export const ContactForm = () => {
           <label htmlFor="name" className="text-sm font-medium text-foreground">
             Full Name
           </label>
+
+          <input
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            {...register('company')}
+            className="hidden"
+          />
 
           <Input
             id="name"
@@ -121,7 +120,7 @@ export const ContactForm = () => {
           <Send className="ml-2 size-4" />
         </Button>
         {status === 'success' && (
-          <p className="text-sm text-accent">
+          <p className="text-center text-sm text-accent">
             Message sent successfully. I&apos;ll get back to you soon.
           </p>
         )}
