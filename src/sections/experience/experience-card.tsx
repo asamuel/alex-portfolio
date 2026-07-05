@@ -8,10 +8,9 @@ export const ExperienceCard = ({ experience }: ExperienceTypeProps) => {
   const period = experience.current
     ? `${experience.startDate} — Current`
     : `${experience.startDate} — ${experience.endDate}`;
-  /**border-border bg-card/60 backdrop-blur-md transition-colors hover:bg-card */
 
   return (
-    <article className="relative rounded-md border border-border bg-card/60 p-6 transition-colors hover:bg-card">
+    <article className="relative rounded-md p-6 border border-border bg-card/60 transition-all duration-300 hover:bg-card">
       <span className="absolute -left-[31px] top-7 size-2.5 rounded-full bg-accent" />
 
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">

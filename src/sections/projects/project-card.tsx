@@ -20,7 +20,10 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
   const visibleTechStack = project.techStack.slice(0, 5);
 
   return (
-    <Card className="group flex h-full flex-col rounded-md border-border bg-card/60 backdrop-blur-md transition-colors hover:bg-card">
+    <Card
+      className="group flex h-full flex-col backdrop-blur-md rounded-md border-border bg-card/60 transition-all duration-300 hover:bg-card hover:border-accent/90
+hover:-translate-y-0.5"
+    >
       <CardHeader className="space-y-5 mt-4">
         <div className="flex flex-wrap gap-2">
           <Badge

@@ -11,7 +11,7 @@ export const ExperienceSection = () => {
         <div className="max-w-full">
           <p className="font-mono text-sm uppercase tracking-[0.18em] text-accent">Experience</p>
 
-          <h2 className="mt-4 font-mono text-3xl font-bold tracking-tight text-foreground sm:text-3xl">
+          <h2 className="mt-4 max-w-2xl font-mono text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             A decade building enterprise systems.
           </h2>
         </div>

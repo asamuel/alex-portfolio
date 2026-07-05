@@ -5,7 +5,7 @@ export const HeroCtaButtons = () => {
   return (
     <div className="flex flex-col sm:flex-row gap-3 pt-4">
       <Link
-        href="#contact"
+        href="#projects"
         className="px-6 py-3 border border-foreground/20 hover:border-accent hover:bg-accent/5 rounded transition-all font-mono text-sm font-medium inline-flex items-center justify-center gap-2 group"
       >
         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -19,7 +19,7 @@ export const HeroCtaButtons = () => {
         PROJECTS
       </Link>
       <Link
-        href="#projects"
+        href="#contact"
         className="px-6 py-3 bg-accent text-accent-foreground hover:bg-accent/90 rounded transition-all font-mono text-sm font-medium inline-flex items-center justify-center gap-2 group"
       >
         <Mail className="w-4 h-4" />

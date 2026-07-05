@@ -28,7 +28,7 @@ export const SkillsGrid = ({ skills }: SkillsGridProps) => {
         return (
           <div
             key={skillGroup.id}
-            className="rounded-sm border border-border p-5 bg-card/60 transition-colors hover:bg-card"
+            className="rounded-sm border p-5 border-border bg-card/60 transition-all duration-300 hover:bg-card hover:-translate-y-0.5"
           >
             <h3 className="font-mono text-sm uppercase tracking-widest text-foreground">
               {skillGroup.title}
