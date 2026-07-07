@@ -4,6 +4,16 @@ export interface ProfileSeo {
   siteName: string;
   url: string;
   ogImage: string;
+  themeColor: string;
+  locale: string;
+  type: string;
+  keywords: string[];
+  author: string;
+  creator: string;
+  robots: {
+    index: boolean;
+    follow: boolean;
+  };
 }
 
 export interface ProfileStat {

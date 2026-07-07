@@ -3,8 +3,9 @@ import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { themeInitScript } from '@/lib/theme';
 import './globals.css';
-import { profile } from '@/constants/profiles';
+import { profile } from '@/constants/profile';
 import { Navbar } from '@/components/layout/navbar';
+import Footer from '@/components/layout/footer';
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
 const geistMono = Geist_Mono({
@@ -13,8 +14,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: profile.seo.title,
+  metadataBase: new URL(profile.seo.url),
+  title: {
+    default: profile.seo.title,
+    template: `%s | ${profile.name}`,
+  },
   description: profile.seo.description,
+  applicationName: profile.seo.siteName,
+  authors: [{ name: profile.seo.author }],
+  creator: profile.seo.creator,
+  keywords: profile.seo.keywords,
   icons: {
     icon: [
       {
@@ -42,10 +51,10 @@ export const metadata: Metadata = {
         url: profile.seo.ogImage,
         width: 1200,
         height: 630,
-        alt: profile.name,
+        alt: `${profile.name} portfolio`,
       },
     ],
-    locale: 'en_US',
+    locale: profile.seo.locale,
     type: 'website',
   },
 
@@ -55,6 +64,7 @@ export const metadata: Metadata = {
     description: profile.seo.description,
     images: [profile.seo.ogImage],
   },
+  robots: profile.seo.robots,
 };
 
 export const viewport: Viewport = {
@@ -85,6 +95,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
+        <Footer />
       </body>
     </html>
   );

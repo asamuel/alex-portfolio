@@ -1,4 +1,4 @@
-import { profile } from '@/constants/profiles';
+import { profile } from '@/constants/profile';
 
 export const AboutSection = () => {
   return (

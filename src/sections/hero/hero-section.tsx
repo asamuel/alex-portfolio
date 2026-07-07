@@ -1,4 +1,4 @@
-import { profile } from '@/constants/profiles';
+import { profile } from '@/constants/profile';
 
 import { HeroCtaButtons } from './hero-cta-buttons';
 import { HeroImage } from './hero-image';
@@ -7,7 +7,10 @@ import { HeroStats } from './stats';
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-background text-foreground">
+    <section
+      id="hero"
+      className="relative min-h-screen overflow-hidden bg-background text-foreground"
+    >
       {/* Background integrated image */}
       <HeroImage />
 

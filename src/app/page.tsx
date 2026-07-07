@@ -1,9 +1,9 @@
-import { AboutSection } from '@/sections/about/about';
+import { AboutSection } from '@/sections/about/about-section';
 import { ContactSection } from '@/sections/contact/contact-section';
-import { ExperienceSection } from '@/sections/experience/experience';
-import { HeroSection } from '@/sections/hero/hero';
+import { ExperienceSection } from '@/sections/experience/experience-section';
+import { HeroSection } from '@/sections/hero/hero-section';
 import { ProjectSection } from '@/sections/projects/project-section';
-import { SkillSection } from '@/sections/skills/skills';
+import { SkillSection } from '@/sections/skills/skills-section';
 
 const HomePage = () => {
   return (

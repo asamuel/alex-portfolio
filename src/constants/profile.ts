@@ -47,7 +47,32 @@ export const profile: Profile = {
     description:
       'Senior software engineer with 10+ years of experience building scalable, reliable systems.',
     siteName: 'Alex Benavídez Portfolio',
-    url: 'https://alexbenavidez.dev',
+    //url: 'https://alexbenavidez.dev',
+    url: 'http://localhost:3001',
     ogImage: '/og-image.png',
+    locale: 'en_US',
+    themeColor: '#0A0A0A',
+    type: 'website',
+
+    keywords: [
+      'Senior Software Engineer',
+      'Full Stack Developer',
+      'React',
+      '.NET',
+      'Node.js',
+      'Next.js',
+      'Fintech',
+      'Payment Systems',
+      'Enterprise Software',
+    ],
+
+    author: 'Alex Benavídez',
+
+    creator: 'Alex Benavídez',
+
+    robots: {
+      index: true,
+      follow: true,
+    },
   },
 };
