@@ -36,14 +36,13 @@ export default function OpenGraphImage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          color: '#00FF88',
+          fontSize: 52,
+          fontWeight: 700,
+          lineHeight: 1,
         }}
       >
-        <img
-          src={`${profile.seo.url}/brand/forward-mark-dark.svg`}
-          width="50%"
-          height="50%"
-          alt="Forward logo"
-        />
+        ▲
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column' }}>
