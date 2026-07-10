@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { themeInitScript } from '@/lib/theme';
@@ -78,6 +79,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         {process.env.VERCEL === '1' && <Analytics />}
+        {process.env.VERCEL === '1' && <SpeedInsights />}
         <Footer />
       </body>
     </html>
