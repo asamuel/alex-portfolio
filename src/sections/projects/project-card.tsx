@@ -102,6 +102,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
       <CardFooter className="border-0 bg-transparent px-4 pb-5 pt-5 sm:px-6 sm:pb-6 sm:pt-6">
         <Link
           href={`/projects/${project.slug}`}
+          prefetch={false}
           className="inline-flex min-h-10 items-center gap-2 rounded-sm font-mono text-sm uppercase tracking-wider text-accent transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           View Project
