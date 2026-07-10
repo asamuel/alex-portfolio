@@ -30,7 +30,7 @@ export const profile: Profile = {
     },
     {
       label: 'Integrations',
-      value: '20',
+      value: '100',
       suffix: '+',
       description: 'ENTERPRISE INTEGRATIONS',
     },

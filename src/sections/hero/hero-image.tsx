@@ -9,6 +9,8 @@ export const HeroImage = () => {
         fill
         alt="Alex Benavídez - Senior Software Engineer"
         className="object-cover object-center opacity-95 dark:opacity-90"
+        fetchPriority="high"
+        sizes="55vw"
       />
 
       {/* Fade hacia el texto */}

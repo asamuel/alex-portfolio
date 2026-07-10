@@ -1,4 +1,5 @@
 import type { Skill } from '@/types/skill';
+
 import { SkillTag } from './skill-tag';
 
 type SkillsGridProps = {
@@ -18,7 +19,7 @@ const DEFAULT_VISIBLE_SKILLS = 6;
 
 export const SkillsGrid = ({ skills }: SkillsGridProps) => {
   return (
-    <div className="grid gap-6 md:grid-cols-2 sm:grid-cols-3">
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-3 xl:gap-6">
       {skills.map((skillGroup) => {
         const visibleLimit = SKILL_VISIBLE_LIMITS[skillGroup.id] ?? DEFAULT_VISIBLE_SKILLS;
 
@@ -26,32 +27,32 @@ export const SkillsGrid = ({ skills }: SkillsGridProps) => {
         const hiddenCount = skillGroup.items.length - visibleItems.length;
 
         return (
-          <div
+          <article
             key={skillGroup.id}
-            className="rounded-sm border p-5 border-border bg-card/60 transition-all duration-300 hover:bg-card hover:-translate-y-0.5"
+            className="flex flex-col rounded-sm border border-border bg-card/60 p-4 transition-all duration-300 hover:border-accent/50 hover:bg-card sm:p-5 lg:hover:-translate-y-0.5"
           >
-            <h3 className="font-mono text-sm uppercase tracking-widest text-foreground">
+            <h3 className="font-mono text-sm font-medium uppercase tracking-widest text-foreground">
               {skillGroup.title}
             </h3>
 
-            <p className="mt-3 text-sm leading-6 text-foreground/65">{skillGroup.description}</p>
+            <p className="mt-3 text-sm leading-6 text-muted-foreground">{skillGroup.description}</p>
 
             <div className="mt-5 flex flex-wrap gap-2">
-              <div className="hidden flex-wrap gap-2 lg:flex">
-                {skillGroup.items.map((item) => (
-                  <SkillTag key={item.name} name={item.name} />
-                ))}
-              </div>
-
-              <div className="flex flex-wrap gap-2 lg:hidden">
+              <div className="flex flex-wrap gap-2 xl:hidden">
                 {visibleItems.map((item) => (
                   <SkillTag key={item.name} name={item.name} />
                 ))}
 
-                {hiddenCount > 0 && <SkillTag name={`+${hiddenCount}`} />}
+                {hiddenCount > 0 && <SkillTag name={`+${hiddenCount}`} isCounter />}
+              </div>
+
+              <div className="hidden flex-wrap gap-2 xl:flex">
+                {skillGroup.items.map((item) => (
+                  <SkillTag key={item.name} name={item.name} />
+                ))}
               </div>
             </div>
-          </div>
+          </article>
         );
       })}
     </div>
