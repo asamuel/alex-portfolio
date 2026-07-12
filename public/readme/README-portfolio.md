@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./public/readme/portfolio-readme-banner.svg" alt="Alex Benavídez Portfolio banner" width="100%" />
+  <img src="./public/readme/banner.svg" alt="Alex Benavídez Portfolio banner" width="100%" />
 </p>
 
 <p align="center">
@@ -15,8 +15,6 @@
   <img alt="Cloudflare" src="https://img.shields.io/badge/Cloudflare-DNS-F38020?logo=cloudflare&logoColor=white" />
 </p>
 
----
-
 ## Overview
 
 This repository contains the source code for my personal portfolio website. It presents my experience as a Senior Software Engineer working across enterprise systems, backend development, system integrations, mobile applications, and modern web products.
@@ -28,8 +26,6 @@ The project was built with a strong focus on performance, accessibility, respons
 <p align="center">
   <img src="./public/readme/portfolio-preview.png" alt="Portfolio homepage preview" width="100%" />
 </p>
-
----
 
 ## Features
 
@@ -44,40 +40,34 @@ The project was built with a strong focus on performance, accessibility, respons
 - Vercel Analytics and Speed Insights
 - Accessible, type-safe component architecture
 
----
-
 ## Tech Stack
 
-| Category   | Technologies          |
-| ---------- | --------------------- |
-| Framework  | Next.js 15            |
-| Language   | TypeScript            |
-| UI Library | React 19              |
-| Styling    | Tailwind CSS          |
-| Components | shadcn/ui             |
-| Forms      | React Hook Form + Zod |
-| Email      | Resend                |
-| Hosting    | Vercel                |
-| DNS        | Cloudflare            |
-
----
+| Category | Technologies |
+|---|---|
+| Framework | Next.js 16 |
+| UI | React 19 |
+| Language | TypeScript |
+| Styling | Tailwind CSS 4 |
+| Components | shadcn/ui |
+| Forms | React Hook Form, Zod |
+| Email | Resend |
+| Hosting | Vercel |
+| DNS and email routing | Cloudflare |
 
 ## Lighthouse
 
-| Metric         | Score |
-| -------------- | ----: |
-| Performance    |    99 |
-| Accessibility  |   100 |
-| Best Practices |   100 |
-| SEO            |   100 |
+| Category | Desktop score |
+|---|---:|
+| Performance | 99 |
+| Accessibility | 100 |
+| Best Practices | 100 |
+| SEO | 100 |
 
-Measured on the production deployment.
+Measured against the production build.
 
 <p align="center">
   <img src="./public/readme/lighthouse-desktop.png" alt="Lighthouse desktop results" width="100%" />
 </p>
-
----
 
 ## Project Structure
 
@@ -103,65 +93,54 @@ src
 └── validations
 ```
 
----
-
 ## Local Development
-
-Clone the repository
 
 ```bash
 git clone https://github.com/asamuel/alex-portfolio.git
-```
-
-Install dependencies
-
-```bash
+cd alex-portfolio
 npm install
-```
-
-Run the development server
-
-```bash
 npm run dev
 ```
 
----
+Open `http://localhost:3000`.
 
 ## Environment Variables
 
-Create a `.env.local` file:
+Create `.env.local`:
 
 ```env
 RESEND_API_KEY=
-
 RESEND_FROM=
-
 CONTACT_EMAIL=
 ```
 
----
+Never commit real environment variable values.
+
+## Useful Scripts
+
+```bash
+npm run dev
+npm run build
+npm run start
+npm run lint
+```
 
 ## Deployment
 
-The application is deployed using **Vercel**.
-
-The custom domain is managed with **Cloudflare**.
-
----
+The application is deployed on Vercel and connected to the custom domain `alexbenavidez.dev`. DNS and email routing are managed through Cloudflare.
 
 ## Roadmap
 
-- [x] Responsive Portfolio
-- [x] Dark / Light Theme
-- [x] Contact Form
-- [x] Email Integration
-- [x] SEO Optimization
-- [x] Custom Domain
-- [ ] Project Detail Pages
-- [ ] Technical Case Studies
-- [ ] Blog
-
----
+- [x] Responsive portfolio
+- [x] Dark and light themes
+- [x] Contact form and email integration
+- [x] Custom domain
+- [x] SEO and social metadata
+- [x] Analytics and real-user performance monitoring
+- [ ] Individual project pages
+- [ ] Technical case studies
+- [ ] Mobile bundle optimization
+- [ ] Professional profile photography
 
 ## Contact
 
@@ -169,8 +148,6 @@ The custom domain is managed with **Cloudflare**.
 - LinkedIn: [linkedin.com/in/samuelbz](https://linkedin.com/in/samuelbz)
 - GitHub: [github.com/asamuel](https://github.com/asamuel)
 - Email: [contact@alexbenavidez.dev](mailto:contact@alexbenavidez.dev)
-
----
 
 ## License
 
