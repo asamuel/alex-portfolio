@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./public/readme/portfolio-readme-banner.svg" alt="Alex Benavídez Portfolio banner" width="100%" />
+  <img src="./public/readme/readme-banner-official-logo.svg" alt="Alex Benavídez Portfolio banner" width="100%" />
 </p>
 
 <p align="center">
