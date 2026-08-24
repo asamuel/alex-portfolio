@@ -13,6 +13,9 @@ export interface Project {
   keyContributions: string[];
   keyChallenges: string[];
   impact: string[];
+  engineeringDecisions?: string[];
+  securityConsiderations?: string[];
+  lessonsLearned?: string[];
   media: ProjectMedia[];
   repositoryUrl?: string;
   liveUrl?: string;
