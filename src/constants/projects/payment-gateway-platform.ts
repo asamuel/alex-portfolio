@@ -85,6 +85,8 @@ export const paymentGatewayPlatform: Project = {
       alt: 'Payment gateway dashboard preview',
       caption: 'Main transaction dashboard overview',
       category: 'preview',
+      width: 739,
+      height: 1059,
     },
     {
       type: 'standard',
@@ -92,6 +94,8 @@ export const paymentGatewayPlatform: Project = {
       alt: 'Payment processing flow diagram',
       caption: 'Cybersource payment lifecycle orchestration',
       category: 'flow',
+      width: 739,
+      height: 1059,
     },
     {
       type: 'standard',
@@ -99,6 +103,8 @@ export const paymentGatewayPlatform: Project = {
       alt: 'Payment gateway platform architecture diagram',
       caption: 'Monolithic architecture using ASP.NET Core MVC, IdentityServer, and PostgreSQL',
       category: 'architecture',
+      width: 739,
+      height: 1059,
     },
   ],
   isPrivate: true,

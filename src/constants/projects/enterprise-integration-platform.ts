@@ -83,6 +83,8 @@ export const enterpriseIntegrationPlatform: Project = {
       alt: 'Enterprise integration orchestration flow',
       caption: 'High-level orchestration of banking service flows',
       category: 'preview',
+      width: 739,
+      height: 1059,
     },
     {
       type: 'standard',
@@ -90,6 +92,8 @@ export const enterpriseIntegrationPlatform: Project = {
       alt: 'Service orchestration flow diagram',
       caption: 'External and internal service interaction lifecycle',
       category: 'flow',
+      width: 739,
+      height: 1059,
     },
     {
       type: 'standard',
@@ -97,6 +101,8 @@ export const enterpriseIntegrationPlatform: Project = {
       alt: 'Enterprise integration architecture diagram',
       caption: 'SOA architecture using Oracle Service Bus, WebLogic, JMS, and Oracle Database',
       category: 'architecture',
+      width: 739,
+      height: 1059,
     },
   ],
   isPrivate: true,

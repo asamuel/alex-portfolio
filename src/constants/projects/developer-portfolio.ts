@@ -153,6 +153,8 @@ export const developerPortfolio: Project = {
       alt: 'Alex Benavídez developer portfolio homepage',
       caption: 'Production portfolio homepage and professional branding',
       category: 'preview',
+      width: 1559,
+      height: 886,
     },
     {
       type: 'standard',
@@ -160,6 +162,8 @@ export const developerPortfolio: Project = {
       alt: 'Alex Benavídez developer portfolio mobile interface',
       caption: 'Responsive mobile experience',
       category: 'screenshot',
+      width: 440,
+      height: 851,
     },
     {
       type: 'themed',
@@ -170,6 +174,8 @@ export const developerPortfolio: Project = {
       alt: 'Developer portfolio application architecture diagram',
       caption: 'High-level architecture of the Next.js application and production services',
       category: 'architecture',
+      width: 737,
+      height: 1019,
     },
   ],
 

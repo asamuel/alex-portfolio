@@ -47,8 +47,8 @@ export const profile: Profile = {
     description:
       'Senior software engineer with 10+ years of experience building scalable, reliable systems.',
     siteName: 'Alex Benavídez Portfolio',
-    //url: 'https://alexbenavidez.dev',
-    url: 'http://localhost:3001',
+    url: 'https://alexbenavidez.dev',
+    //url: 'http://localhost:3001',
     ogImage: '/og-image.png',
     locale: 'en_US',
     themeColor: '#0A0A0A',

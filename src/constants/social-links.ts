@@ -18,8 +18,8 @@ export const socialLinks: SocialLink[] = [
   {
     id: 'email',
     label: 'Email',
-    value: 'samuelxlm0@gmail.com',
-    href: 'mailto:samuelxlm0@gmail.com',
+    value: 'contact@alexbenavidez.dev',
+    href: 'mailto:contact@alexbenavidez.dev',
     external: false,
   },
   {

@@ -4,6 +4,8 @@ export type ProjectMediaBase = {
   alt: string;
   caption?: string;
   category: ProjectMediaCategory;
+  width: number;
+  height: number;
 };
 
 export type StandardProjectMedia = ProjectMediaBase & {

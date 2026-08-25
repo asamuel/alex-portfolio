@@ -91,6 +91,8 @@ export const agentBankingPlatform: Project = {
       alt: 'Agent banking platform dashboard on PAX device',
       caption: 'Main service dashboard deployed on PAX smart POS devices',
       category: 'preview',
+      width: 739,
+      height: 1059,
     },
     {
       type: 'standard',
@@ -98,6 +100,8 @@ export const agentBankingPlatform: Project = {
       alt: 'Distributed banking services flow diagram',
       caption: 'High-level orchestration of banking services across agent terminals',
       category: 'flow',
+      width: 739,
+      height: 1059,
     },
     {
       type: 'standard',
@@ -105,6 +109,8 @@ export const agentBankingPlatform: Project = {
       alt: 'Mobile security architecture diagram',
       caption: 'Enterprise mobile security architecture for secure field transactions',
       category: 'architecture',
+      width: 739,
+      height: 1059,
     },
   ],
   isPrivate: true,
