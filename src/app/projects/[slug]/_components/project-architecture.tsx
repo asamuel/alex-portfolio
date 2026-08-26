@@ -1,5 +1,6 @@
 import { Project } from '@/types/project';
 import { ProjectMedia } from './project-media';
+import { ProjectNarrativeText } from './project-narrative-text';
 
 type ProjectArchitectureProps = {
   project: Project;
@@ -18,10 +19,8 @@ export const ProjectArchitecture = ({ project }: ProjectArchitectureProps) => {
             </p>
           </div>
 
-          <div className="space-y-12">
-            <p className="max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-              {project.architecture}
-            </p>
+          <div className="space-y-12 max-w-3xl">
+            <ProjectNarrativeText segments={project.architecture} />
 
             {architectureMedia.length > 0 && (
               <div className="space-y-10">

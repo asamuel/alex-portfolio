@@ -5,6 +5,12 @@ import { notFound } from 'next/navigation';
 import { ProjectHeader } from './_components/project-header';
 import { ProjectArchitecture } from './_components/project-architecture';
 import { ProjectTechStack } from './_components/project-tech-stack';
+import { ProjectContributions } from './_components/project-contributions';
+import { ProjecEngineeringDecisions } from './_components/project-engineering-decisions';
+import { ProjectNarrativeText } from './_components/project-narrative-text';
+import { ProjectChallenges } from './_components/project-challenges';
+import { ProjectSecurityConsiderations } from './_components/project-security-considerations';
+import { ProjectImpact } from './_components/project-impact';
 
 type ProjectPageProps = {
   params: Promise<{
@@ -79,9 +85,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </div>
 
             <div className="max-w-3xl">
-              <p className="text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-                {project.overview}
-              </p>
+              <ProjectNarrativeText segments={project.overview} />
             </div>
           </div>
         </div>
@@ -90,6 +94,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <ProjectArchitecture project={project} />
 
       <ProjectTechStack project={project} />
+
+      <ProjectContributions project={project} />
+
+      <ProjecEngineeringDecisions project={project} />
+
+      <ProjectChallenges project={project} />
+
+      <ProjectSecurityConsiderations project={project} />
+
+      <ProjectImpact project={project} />
     </main>
   );
 }

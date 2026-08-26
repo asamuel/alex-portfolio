@@ -8,13 +8,95 @@ export const developerPortfolio: Project = {
   summary:
     'Production-grade engineering portfolio built with Next.js to showcase technical experience, projects, and engineering decisions while prioritizing performance, accessibility, SEO, and maintainability.',
 
-  overview:
-    'Designed and developed a production portfolio as a professional engineering platform rather than a traditional static personal website. The application centralizes technical experience, projects, professional branding, and contact capabilities within a minimal product-oriented interface. The implementation focuses on server-first rendering, strong SEO, accessibility, responsive behavior, production email delivery, custom theming, and a maintainable component architecture designed to evolve through independent releases.',
-
+  overview: [
+    {
+      text: 'Designed and developed a production portfolio as a professional engineering platform rather than a traditional static personal website. The application centralizes technical experience, projects, professional branding, and contact capabilities within a ',
+    },
+    {
+      text: 'minimal product-oriented interface',
+      emphasis: 'strong',
+    },
+    {
+      text: '. The implementation focuses on ',
+    },
+    {
+      text: 'server-first',
+      emphasis: 'strong',
+    },
+    {
+      text: ' rendering, strong ',
+    },
+    {
+      text: 'SEO',
+      emphasis: 'strong',
+    },
+    {
+      text: ', accessibility, responsive behavior, production email delivery, custom theming, and a maintainable component architecture designed to evolve through independent releases.',
+    },
+  ],
   role: 'Full Stack Engineer',
 
-  architecture:
-    'Server-first application built with Next.js App Router, React, and TypeScript, using Tailwind CSS and shadcn/ui for the presentation layer. Portfolio content is modeled through strongly typed constants and rendered through reusable sections and components. Client-side boundaries are intentionally limited to functionality that requires browser interaction, including theme switching and the contact form. A custom light and dark theme system uses CSS variables, localStorage, system color preference detection, and an initialization script executed before the application renders to minimize theme flashing. Contact submissions are processed through a Next.js Route Handler with server-side schema validation, honeypot protection, IP-based rate limiting, and Resend integration. The application is continuously deployed to Vercel from GitHub, with Cloudflare managing the custom domain, DNS, and inbound email routing.',
+  architecture: [
+    {
+      text: 'Server-first application built with ',
+    },
+    {
+      text: 'Next.js App Router',
+      emphasis: 'code',
+    },
+    {
+      text: ', ',
+    },
+    {
+      text: 'React',
+      emphasis: 'code',
+    },
+    {
+      text: ', and ',
+    },
+    {
+      text: 'TypeScript',
+      emphasis: 'code',
+    },
+    {
+      text: ', using ',
+    },
+    {
+      text: 'Tailwind CSS',
+      emphasis: 'code',
+    },
+    {
+      text: ' and ',
+    },
+    {
+      text: 'shadcn/ui',
+      emphasis: 'code',
+    },
+    {
+      text: ' for the presentation layer. Portfolio content is modeled through strongly typed constants and rendered through reusable sections and components. Client-side boundaries are intentionally limited to functionality that requires ',
+    },
+    {
+      text: 'browser interaction',
+      emphasis: 'strong',
+    },
+    {
+      text: ', including theme switching and the contact form. A custom light and dark theme system uses CSS variables, localStorage, system color preference detection, and an initialization script executed before the application renders to minimize theme flashing. Contact submissions are processed through a Next.js Route Handler with server-side schema validation, honeypot protection, IP-based rate limiting, and Resend integration. The application is continuously deployed to ',
+    },
+    {
+      text: 'Vercel',
+      emphasis: 'code',
+    },
+    {
+      text: ' from GitHub, with ',
+    },
+    {
+      text: 'Cloudflare',
+      emphasis: 'code',
+    },
+    {
+      text: ' managing the custom domain, DNS, and inbound email routing.',
+    },
+  ],
 
   techStack: [
     {
@@ -94,35 +176,189 @@ export const developerPortfolio: Project = {
   ],
 
   engineeringDecisions: [
-    'Used Server Components as the default rendering model and introduced Client Components only where browser APIs, client state, or user interaction required them.',
-    'Separated portfolio content into strongly typed constants instead of embedding professional data directly inside presentation components.',
-    'Structured the homepage as focused reusable sections rather than building the entire interface directly inside the root page component.',
-    'Implemented a custom theme system rather than introducing an additional theme dependency, keeping the behavior explicit and under application control.',
-    'Executed a small inline theme initialization script before body rendering so the stored or system-preferred theme can be applied before React hydration.',
-    'Used useSyncExternalStore for theme state synchronization, keeping the custom external theme state compatible with React rendering semantics.',
-    'Dynamically loaded the interactive theme toggle without server-side rendering because its behavior depends directly on browser APIs such as localStorage and matchMedia.',
-    'Used CSS custom properties as semantic design tokens so the same component styles can operate consistently across light and dark themes.',
-    'Kept page sections focused on presentation while moving contact email delivery into a dedicated service and server-side Route Handler.',
-    'Used schema-based validation with Zod on the server rather than trusting client-side form validation.',
-    'Implemented a honeypot field instead of adding CAPTCHA, preserving a frictionless contact experience while filtering basic automated submissions.',
-    'Returned a normal success response for honeypot submissions without sending an email, avoiding disclosure of the anti-bot mechanism.',
-    'Applied lightweight IP-based rate limiting to reduce repeated contact endpoint abuse without adding an external persistence dependency to the initial production release.',
-    'Kept email provider credentials and environment-specific configuration exclusively on the server.',
-    'Used Next.js metadata APIs for SEO, Open Graph, Twitter metadata, sitemap, robots configuration, viewport configuration, and application metadata.',
-    'Loaded Vercel Analytics and Speed Insights only in the Vercel production environment.',
-    'Kept the visual system intentionally minimal and product-oriented, prioritizing typography, spacing, accessibility, content hierarchy, and performance over decorative animation.',
+    {
+      title: 'Server-first by default',
+      description: [
+        {
+          text: 'The portfolio uses ',
+        },
+        {
+          text: 'Server Components',
+          emphasis: 'strong',
+        },
+        {
+          text: ' as the default rendering model because most of the application is content-driven and does not require browser-side state. ',
+        },
+        {
+          text: 'Client Components',
+          emphasis: 'strong',
+        },
+        {
+          text: ' are introduced only where browser APIs or direct user interaction are necessary, including theme switching and the contact form. This keeps client-side boundaries explicit and avoids shipping unnecessary JavaScript.',
+        },
+      ],
+    },
+
+    {
+      title: 'Custom theme without an additional dependency',
+      description: [
+        {
+          text: 'Rather than introducing a theme library, I implemented a focused light and dark theme system using CSS variables, ',
+        },
+        {
+          text: 'localStorage',
+          emphasis: 'code',
+        },
+        {
+          text: ', system preference detection through ',
+        },
+        {
+          text: 'matchMedia',
+          emphasis: 'code',
+        },
+        {
+          text: ', and a small initialization script executed before hydration. The behavior remains explicit and fully aligned with the portfolio design tokens.',
+        },
+      ],
+    },
+
+    {
+      title: 'Server-side contact processing',
+      description: [
+        {
+          text: 'The contact form performs client-side validation for user experience, but ',
+        },
+        {
+          text: 'the server remains the source of trust',
+          emphasis: 'strong',
+        },
+        {
+          text: '. Submissions are processed through ',
+        },
+        {
+          text: '/api/contact',
+          emphasis: 'code',
+        },
+        {
+          text: ', validated with ',
+        },
+        {
+          text: 'Zod',
+          emphasis: 'code',
+        },
+        {
+          text: ', and passed to a dedicated email service so provider credentials never reach browser code.',
+        },
+      ],
+    },
+
+    {
+      title: 'Low-friction abuse protection',
+      description: [
+        {
+          text: 'I chose a ',
+        },
+        {
+          text: 'honeypot',
+          emphasis: 'strong',
+        },
+        {
+          text: ' and lightweight ',
+        },
+        {
+          text: 'IP-based rate limiting',
+          emphasis: 'strong',
+        },
+        {
+          text: ' instead of adding CAPTCHA. The goal was to reduce basic automated abuse while preserving a frictionless contact experience. Detected honeypot submissions intentionally receive a normal success response without triggering email delivery.',
+        },
+      ],
+    },
   ],
 
   securityConsiderations: [
-    'Kept Resend API credentials, sender configuration, and destination email configuration exclusively on the server through environment variables.',
-    'Validated every incoming contact submission server-side with a Zod schema before processing the request.',
-    'Implemented a hidden honeypot field to detect automated form submissions without introducing additional interaction for legitimate users.',
-    'Silently accepted detected honeypot submissions without sending an email, preventing automated clients from learning how bot detection is implemented.',
-    'Applied IP-based request throttling to the public contact endpoint to reduce repeated automated submissions.',
-    'Limited contact submissions to five requests per ten-minute window within the active rate-limiter instance.',
-    'Returned controlled API responses for validation failures, rate-limit violations, delivery failures, and unexpected errors without exposing internal implementation details.',
-    'Kept transactional email delivery behind a server-side service instead of invoking Resend directly from browser code.',
-    'Separated inbound professional email routing through Cloudflare from transactional contact-form delivery through Resend.',
+    {
+      title: 'Server-only credentials',
+      description: [
+        {
+          text: 'Resend API credentials, sender configuration, and destination email settings are stored in ',
+        },
+        {
+          text: 'environment variables',
+          emphasis: 'code',
+        },
+        {
+          text: ' and used exclusively from server-side code. The browser never communicates directly with the email provider.',
+        },
+      ],
+    },
+    {
+      title: 'Server-side input validation',
+      description: [
+        {
+          text: 'The contact form validates input in the browser for immediate feedback, but every submission is validated again with ',
+        },
+        {
+          text: 'Zod',
+          emphasis: 'code',
+        },
+        {
+          text: ' inside the Route Handler. ',
+        },
+        {
+          text: 'Server-side validation',
+          emphasis: 'strong',
+        },
+        {
+          text: ' defines the real trust boundary.',
+        },
+      ],
+    },
+    {
+      title: 'Honeypot bot detection',
+      description: [
+        {
+          text: 'A hidden ',
+        },
+        {
+          text: 'company',
+          emphasis: 'code',
+        },
+        {
+          text: ' field is invisible to normal users but may be populated by simple automated bots. When that happens, the endpoint returns a normal success response without sending an email, reducing the chance of exposing the detection mechanism.',
+        },
+      ],
+    },
+    {
+      title: 'Request throttling',
+      description: [
+        {
+          text: 'The public contact endpoint applies lightweight IP-based throttling with a limit of ',
+        },
+        {
+          text: 'five requests within a ten-minute window',
+          emphasis: 'strong',
+        },
+        {
+          text: ' for the active server instance. This provides a practical first layer of abuse protection without introducing external persistence or infrastructure.',
+        },
+      ],
+    },
+    {
+      title: 'Controlled failure responses',
+      description: [
+        {
+          text: 'Validation failures, throttled requests, email delivery errors, and unexpected server exceptions return ',
+        },
+        {
+          text: 'controlled responses',
+          emphasis: 'strong',
+        },
+        {
+          text: ' that avoid exposing provider details, credentials, stack traces, or other internal implementation information.',
+        },
+      ],
+    },
   ],
 
   impact: [
@@ -137,13 +373,111 @@ export const developerPortfolio: Project = {
   ],
 
   lessonsLearned: [
-    'A strong engineering portfolio benefits more from clear technical storytelling and deliberate architecture than from excessive animation or visual complexity.',
-    'Server-first rendering provides a strong default for content-heavy applications when interactive client boundaries remain explicit and narrow.',
-    'Custom theme management is relatively small in scope but requires careful handling of initialization, persistence, hydration, system preferences, and browser-only APIs.',
-    'Separating content from presentation makes professional information easier to maintain and provides a natural foundation for richer technical case-study pages.',
-    'SEO, accessibility, email delivery, analytics, performance monitoring, deployment, and security are part of the application architecture rather than final-stage polish.',
-    'Simple anti-abuse mechanisms such as honeypots and lightweight throttling can provide useful protection without adding friction to a public contact form.',
-    'Production deployment infrastructure and professional email configuration are important parts of presenting a personal engineering project as a complete product.',
+    {
+      title: 'Architecture matters even for small products',
+      description: [
+        {
+          text: 'A portfolio does not need enterprise-level complexity, but decisions around rendering, content modeling, accessibility, deployment, and security still benefit from ',
+        },
+        {
+          text: 'clear boundaries and intentional architecture',
+          emphasis: 'strong',
+        },
+        {
+          text: '. Keeping the system simple became easier once each responsibility had a defined place.',
+        },
+      ],
+    },
+    {
+      title: 'Server-first is a strong default',
+      description: [
+        {
+          text: 'Starting with ',
+        },
+        {
+          text: 'Server Components',
+          emphasis: 'code',
+        },
+        {
+          text: ' for content-heavy pages made it easier to keep client-side behavior focused. ',
+        },
+        {
+          text: 'Client Components were added only where interaction or browser APIs provided real value.',
+          emphasis: 'accent',
+        },
+        {
+          text: ' This reduced unnecessary JavaScript and made rendering responsibilities easier to reason about.',
+        },
+      ],
+    },
+    {
+      title: 'Theme systems have subtle edge cases',
+      description: [
+        {
+          text: 'Implementing a custom theme looked simple initially, but required careful handling of ',
+        },
+        {
+          text: 'localStorage',
+          emphasis: 'code',
+        },
+        {
+          text: ', ',
+        },
+        {
+          text: 'matchMedia',
+          emphasis: 'code',
+        },
+        {
+          text: ', initialization timing, hydration, and persisted user preference. ',
+        },
+        {
+          text: 'Small UI features can introduce meaningful architectural considerations.',
+          emphasis: 'strong',
+        },
+      ],
+    },
+    {
+      title: 'Security should match the actual risk',
+      description: [
+        {
+          text: 'The public contact form did not justify adding a heavy security layer such as CAPTCHA, but it still required protection against malformed input and basic automated abuse. ',
+        },
+        {
+          text: 'A lightweight combination of server validation, honeypot detection, and request throttling',
+          emphasis: 'strong',
+        },
+        {
+          text: ' provided an appropriate balance between protection and user experience.',
+        },
+      ],
+    },
+    {
+      title: 'Production concerns are part of the product',
+      description: [
+        {
+          text: 'SEO, accessibility, analytics, performance monitoring, transactional email, DNS configuration, and deployment are not merely finishing touches. ',
+        },
+        {
+          text: 'They are part of delivering a complete production application.',
+          emphasis: 'accent',
+        },
+        {
+          text: ' Treating them as first-class concerns made the portfolio more representative of real-world software engineering work.',
+        },
+      ],
+    },
+    {
+      title: 'Simple abstractions age better',
+      description: [
+        {
+          text: 'Typed constants, reusable components, semantic HTML, and small focused utilities were often enough without introducing additional libraries or complex state management. ',
+        },
+        {
+          text: 'The simplest abstraction that clearly expresses the responsibility is usually the easiest to maintain.',
+          emphasis: 'strong',
+        },
+      ],
+    },
   ],
 
   media: [

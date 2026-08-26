@@ -1,4 +1,5 @@
 import { ProjectMedia } from './project-media';
+import { ProjectNarrativeItem, ProjectNarrativeSegment } from './project-narrative-item';
 import { TechItem } from './tech-item';
 
 export interface Project {
@@ -6,16 +7,16 @@ export interface Project {
   slug: string;
   status: 'completed' | 'in-progress' | 'planned';
   summary: string;
-  overview: string;
+  overview: ProjectNarrativeSegment[];
   role: string;
-  architecture: string;
+  architecture: ProjectNarrativeSegment[];
   techStack: TechItem[];
   keyContributions: string[];
   keyChallenges: string[];
   impact: string[];
-  engineeringDecisions?: string[];
-  securityConsiderations?: string[];
-  lessonsLearned?: string[];
+  engineeringDecisions?: ProjectNarrativeItem[];
+  securityConsiderations?: ProjectNarrativeItem[];
+  lessonsLearned?: ProjectNarrativeItem[];
   media: ProjectMedia[];
   repositoryUrl?: string;
   liveUrl?: string;
