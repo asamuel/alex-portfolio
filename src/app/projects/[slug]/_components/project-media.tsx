@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 import type { ProjectMedia as ProjectMediaType } from '@/types/project-media';
+import { ProjectMediaLightbox } from './project-media-lightbox';
 
 type ProjectMediaProps = {
   media: ProjectMediaType;
@@ -20,15 +21,16 @@ export const ProjectMedia = ({ media }: ProjectMediaProps) => {
           className="w-full overflow-hidden rounded-xl border border-border bg-card p-3 sm:p-4"
           style={imageWrapperStyle}
         >
-          {media.type === 'themed' ? (
-            <>
-              <Image
-                src={media.src.light}
-                alt={media.alt}
-                width={media.width}
-                height={media.height}
-                sizes={imageSizes}
-                className="
+          <ProjectMediaLightbox media={media}>
+            {media.type === 'themed' ? (
+              <>
+                <Image
+                  src={media.src.light}
+                  alt={media.alt}
+                  width={media.width}
+                  height={media.height}
+                  sizes={imageSizes}
+                  className="
                   block
                   h-auto
                   w-full
@@ -38,16 +40,16 @@ export const ProjectMedia = ({ media }: ProjectMediaProps) => {
                   group-hover:scale-[1.01]
                   dark:hidden
                 "
-              />
+                />
 
-              <Image
-                src={media.src.dark}
-                alt={media.alt}
-                width={media.width}
-                height={media.height}
-                sizes={imageSizes}
-                className="
-                  block
+                <Image
+                  src={media.src.dark}
+                  alt={media.alt}
+                  width={media.width}
+                  height={media.height}
+                  sizes={imageSizes}
+                  className="
+                  hidden
                   h-auto
                   w-full
                   transition-transform
@@ -56,16 +58,16 @@ export const ProjectMedia = ({ media }: ProjectMediaProps) => {
                   group-hover:scale-[1.01]
                   dark:block
                 "
-              />
-            </>
-          ) : (
-            <Image
-              src={media.src}
-              alt={media.alt}
-              width={media.width}
-              height={media.height}
-              sizes={imageSizes}
-              className="
+                />
+              </>
+            ) : (
+              <Image
+                src={media.src}
+                alt={media.alt}
+                width={media.width}
+                height={media.height}
+                sizes={imageSizes}
+                className="
                 h-auto
                 w-full
                 transition-transform
@@ -73,8 +75,9 @@ export const ProjectMedia = ({ media }: ProjectMediaProps) => {
                 ease-out
                 group-hover:scale-[1.01]
                 "
-            />
-          )}
+              />
+            )}
+          </ProjectMediaLightbox>
         </div>
       </div>
 
