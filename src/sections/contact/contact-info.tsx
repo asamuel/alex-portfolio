@@ -14,7 +14,7 @@ export const ContactInfo = () => {
           Let&apos;s build something impactful
         </h2>
 
-        <p className="mt-4 max-w-xl text-base leading-7 text-muted-foreground">
+        <p className="mt-4 max-w-xl text-base leading-7 text-foreground/70">
           I&apos;m open to collaborating on scalable backend systems, enterprise integrations,
           mobile solutions, and modern web products.
         </p>

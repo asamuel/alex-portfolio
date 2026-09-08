@@ -13,7 +13,12 @@ export const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        <Link href="/" className="font-mono text-sm tracking-tight" aria-label="Go to homepage">
+        <Link
+          href="/"
+          className="font-mono text-sm tracking-tight"
+          aria-label="Go to homepage"
+          prefetch={false}
+        >
           <BrandLogo className="size-9" />
         </Link>
 

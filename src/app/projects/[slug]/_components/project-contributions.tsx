@@ -1,37 +1,45 @@
-import { Project } from '@/types/project';
+import { Boxes, ShieldCheck, Workflow, Database, Gauge, Wrench } from 'lucide-react';
+
+import type { Project } from '@/types/project';
 
 type ProjectContributionsProps = {
   project: Project;
 };
 
+const contributionIcons = [Boxes, ShieldCheck, Workflow, Database, Gauge, Wrench];
+
 export const ProjectContributions = ({ project }: ProjectContributionsProps) => {
-  if (project.keyContributions.length === 0) return null;
+  if (project.keyContributions.length === 0) {
+    return null;
+  }
 
   return (
     <section className="border-b border-border px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-8 lg:grid-cols-[280px_1fr] lg:gap-16">
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent sm:text-sm">
+            <h2 className="font-mono text-xs font-normal uppercase tracking-[0.22em] text-accent sm:text-sm">
               Key Contributions
-            </p>
+            </h2>
           </div>
 
-          <ol className="border-t border-border">
-            {project.keyContributions.map((contribution, index) => (
-              <li
-                key={contribution}
-                className="grid gap-4 border-b border-border py-6 sm:grid-cols-[48px_1fr] sm:gap-6"
-              >
-                <span className="font-mono text-xs text-muted-foreground" aria-hidden="true">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
+          <ol className="grid gap-x-10 sm:grid-cols-2">
+            {project.keyContributions.map((contribution, index) => {
+              const Icon = contributionIcons[index % contributionIcons.length];
 
-                <p className="max-w-3xl text-base leading-7 text-foreground/85 sm:text-lg sm:leading-8">
-                  {contribution}
-                </p>
-              </li>
-            ))}
+              return (
+                <li
+                  key={contribution}
+                  className="grid grid-cols-[32px_1fr] gap-4 border-t border-border py-6"
+                >
+                  <Icon className="mt-1 h-4 w-4 text-accent" aria-hidden="true" />
+
+                  <p className="text-base leading-7 text-foreground/75 sm:leading-8">
+                    {contribution}
+                  </p>
+                </li>
+              );
+            })}
           </ol>
         </div>
       </div>

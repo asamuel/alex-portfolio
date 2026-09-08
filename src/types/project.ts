@@ -10,7 +10,12 @@ export interface Project {
   overview: ProjectNarrativeSegment[];
   role: string;
   architecture: ProjectNarrativeSegment[];
+  architectureHighlights?: {
+    title: string;
+    description: string;
+  }[];
   techStack: TechItem[];
+  featuredTech?: string[];
   keyContributions: string[];
   keyChallenges: string[];
   impact: string[];

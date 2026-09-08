@@ -18,7 +18,7 @@ export const ProjectSection = () => {
             Projects built to solve real-world problems.
           </h2>
 
-          <p className="mt-4 max-w-2xl text-base leading-7 text-muted-foreground sm:mt-6">
+          <p className="mt-4 max-w-2xl text-base leading-7 text-foreground/70 sm:mt-6">
             A collection of projects showcasing technical depth, architectural decisions, and
             measurable impact across product and infrastructure initiatives.
           </p>

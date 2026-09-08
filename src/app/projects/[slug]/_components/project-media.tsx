@@ -11,7 +11,7 @@ export const ProjectMedia = ({ media }: ProjectMediaProps) => {
     maxWidth: `${media.width}px`,
   };
 
-  const imageSizes = `(max-width: 768px) 100vw, ${media.width}px`;
+  const imageSizes = `(max-width: 640px) calc(100vw - 56px), (max-width: 1024px) calc(100vw - 96px), ${media.width}px`;
 
   return (
     <figure className="space-y-4">
@@ -28,16 +28,34 @@ export const ProjectMedia = ({ media }: ProjectMediaProps) => {
                 width={media.width}
                 height={media.height}
                 sizes={imageSizes}
-                className="block h-auto w-full dark:hidden"
+                className="
+                  block
+                  h-auto
+                  w-full
+                  transition-transform
+                  duration-300
+                  ease-out
+                  group-hover:scale-[1.01]
+                  dark:hidden
+                "
               />
 
               <Image
                 src={media.src.dark}
-                alt=""
+                alt={media.alt}
                 width={media.width}
                 height={media.height}
                 sizes={imageSizes}
-                className="hidden h-auto w-full dark:block"
+                className="
+                  block
+                  h-auto
+                  w-full
+                  transition-transform
+                  duration-300
+                  ease-out
+                  group-hover:scale-[1.01]
+                  dark:block
+                "
               />
             </>
           ) : (
@@ -47,7 +65,14 @@ export const ProjectMedia = ({ media }: ProjectMediaProps) => {
               width={media.width}
               height={media.height}
               sizes={imageSizes}
-              className="h-auto w-full"
+              className="
+                h-auto
+                w-full
+                transition-transform
+                duration-300
+                ease-out
+                group-hover:scale-[1.01]
+                "
             />
           )}
         </div>
@@ -55,7 +80,7 @@ export const ProjectMedia = ({ media }: ProjectMediaProps) => {
 
       {media.caption && (
         <figcaption
-          className="mx-auto text-sm leading-6 text-muted-foreground"
+          className="mx-auto font-mono text-xs leading-5 text-muted-foreground/90 sm:text-sm"
           style={imageWrapperStyle}
         >
           {media.caption}

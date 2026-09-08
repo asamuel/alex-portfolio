@@ -4,13 +4,14 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ProjectHeader } from './_components/project-header';
 import { ProjectArchitecture } from './_components/project-architecture';
-import { ProjectTechStack } from './_components/project-tech-stack';
 import { ProjectContributions } from './_components/project-contributions';
 import { ProjecEngineeringDecisions } from './_components/project-engineering-decisions';
 import { ProjectNarrativeText } from './_components/project-narrative-text';
 import { ProjectChallenges } from './_components/project-challenges';
 import { ProjectSecurityConsiderations } from './_components/project-security-considerations';
 import { ProjectImpact } from './_components/project-impact';
+import { ProjectProductExperience } from './_components/project-product-experience';
+import { ProjectLessonsLearned } from './_components/project-lessons-learned';
 
 type ProjectPageProps = {
   params: Promise<{
@@ -79,12 +80,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-[280px_1fr] lg:gap-16">
             <div>
-              <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent sm:text-sm">
+              <h2 className="font-mono text-xs font-normal uppercase tracking-[0.22em] text-accent sm:text-sm">
                 Overview
-              </p>
+              </h2>
             </div>
 
-            <div className="max-w-3xl">
+            <div className="max-w-[70ch]">
               <ProjectNarrativeText segments={project.overview} />
             </div>
           </div>
@@ -92,8 +93,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </section>
 
       <ProjectArchitecture project={project} />
-
-      <ProjectTechStack project={project} />
 
       <ProjectContributions project={project} />
 
@@ -104,6 +103,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <ProjectSecurityConsiderations project={project} />
 
       <ProjectImpact project={project} />
+
+      <ProjectProductExperience project={project} />
+
+      <ProjectLessonsLearned project={project} />
     </main>
   );
 }

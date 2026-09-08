@@ -31,11 +31,11 @@ export const SkillsGrid = ({ skills }: SkillsGridProps) => {
             key={skillGroup.id}
             className="flex flex-col rounded-sm border border-border bg-card/60 p-4 transition-all duration-300 hover:border-accent/50 hover:bg-card sm:p-5 lg:hover:-translate-y-0.5"
           >
-            <h3 className="font-mono text-sm font-medium uppercase tracking-widest text-foreground">
+            <h3 className="text-sm font-medium uppercase tracking-widest text-foreground/90">
               {skillGroup.title}
             </h3>
 
-            <p className="mt-3 text-sm leading-6 text-muted-foreground">{skillGroup.description}</p>
+            <p className="mt-3 text-sm leading-6 text-foreground/70">{skillGroup.description}</p>
 
             <div className="mt-5 flex flex-wrap gap-2">
               <div className="flex flex-wrap gap-2 xl:hidden">

@@ -13,15 +13,15 @@ export const ProjecEngineeringDecisions = ({ project }: ProjecEngineeringDecisio
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-8 lg:grid-cols-[280px_1fr] lg:gap-16">
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent sm:text-sm">
+            <h2 className="font-mono text-xs font-normal uppercase tracking-[0.22em] text-accent sm:text-sm">
               Engineering Decisions
-            </p>
+            </h2>
           </div>
 
-          <div className="max-w-3xl space-y-10 sm:space-y-12">
+          <div className="max-w-[70ch] space-y-8 sm:space-y-10">
             {project.engineeringDecisions.map((decision) => (
               <article key={decision.title}>
-                <h3 className="font-mono text-lg font-semibold tracking-tight text-foreground sm:text-xl">
+                <h3 className="text-lg font-semibold tracking-tight text-foreground/90 sm:text-xl">
                   {decision.title}
                 </h3>
 

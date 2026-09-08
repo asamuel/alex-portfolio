@@ -19,12 +19,12 @@ const Footer = () => {
             </span>
           </Link>
 
-          <p className="max-w-md text-sm text-muted-foreground">
+          <p className="max-w-md text-sm text-foreground/70">
             Senior Software Engineer building scalable systems, enterprise integrations, and modern
             digital products.
           </p>
 
-          <p className="text-xs text-muted-foreground">
+          <p className="text-xs text-foreground/70">
             © {currentYear} Alex Benavidez. All rights reserved.
           </p>
         </div>
@@ -37,7 +37,7 @@ const Footer = () => {
                 href={link.href}
                 target={link.external ? '_blank' : undefined}
                 rel={link.external ? 'noreferrer' : undefined}
-                className="text-sm text-muted-foreground transition-colors hover:text-accent"
+                className="text-sm text-foreground/70 transition-colors hover:text-accent"
                 aria-label={link.label}
               >
                 {link.label}

@@ -6,7 +6,7 @@ type ProjectNarrativeTextProps = {
 
 export const ProjectNarrativeText = ({ segments }: ProjectNarrativeTextProps) => {
   return (
-    <p className="mt-3 text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
+    <p className="mt-3 max-w-[70ch] text-base leading-7 text-foreground/75  sm:leading-7.5">
       {segments.map((segment, index) => {
         if (segment.emphasis === 'strong') {
           return (

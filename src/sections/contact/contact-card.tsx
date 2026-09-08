@@ -24,7 +24,7 @@ export const ContactCard = ({ contact }: ContactCardProps) => {
       <div className="min-w-0 flex-1">
         <p className="text-sm font-medium text-foreground">{contact.label}</p>
 
-        <p className="truncate text-sm text-muted-foreground">{contact.value}</p>
+        <p className="truncate text-sm text-foreground/70">{contact.value}</p>
       </div>
 
       <ArrowUpRight

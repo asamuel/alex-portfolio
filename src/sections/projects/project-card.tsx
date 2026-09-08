@@ -45,13 +45,13 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           )}
         </div>
 
-        <CardTitle className="text-pretty font-mono text-xl font-semibold leading-snug tracking-tight text-foreground sm:text-2xl">
+        <CardTitle className="text-pretty text-xl font-semibold leading-snug tracking-tight text-foreground/90 sm:text-2xl">
           {project.title}
         </CardTitle>
       </CardHeader>
 
       <CardContent className="flex flex-1 flex-col px-4 pb-0 sm:px-6">
-        <p className="text-sm leading-7 text-muted-foreground">{project.summary}</p>
+        <p className="text-sm leading-7 text-foreground/70">{project.summary}</p>
 
         <div className="mt-5 sm:mt-6">
           <p className="mb-2 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted-foreground">
@@ -67,7 +67,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               Challenge solved
             </p>
 
-            <p className="text-sm leading-7 text-muted-foreground">{challenge}</p>
+            <p className="text-sm leading-7 text-foreground/70">{challenge}</p>
           </div>
         )}
 

@@ -14,7 +14,7 @@ export const HeroStats = () => {
             index < profile.stats.length - 1 && 'sm:border-r sm:border-border'
           )}
         >
-          <p className="font-mono text-[0.65rem] font-medium uppercase tracking-[0.16em] text-muted-foreground sm:text-xs sm:tracking-widest">
+          <p className="font-mono text-[0.65rem] font-medium uppercase tracking-[0.16em] text-foreground/70 sm:text-xs sm:tracking-widest">
             {stat.label}
           </p>
 
@@ -23,7 +23,7 @@ export const HeroStats = () => {
             {stat.suffix && <span className="text-accent">{stat.suffix}</span>}
           </p>
 
-          <p className="mt-3 max-w-40 font-mono text-[0.65rem] leading-relaxed text-muted-foreground sm:text-xs">
+          <p className="mt-3 max-w-40 font-mono text-[0.65rem] leading-relaxed text-foreground/70 sm:text-xs">
             {stat.description}
           </p>
         </div>

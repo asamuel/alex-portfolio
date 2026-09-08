@@ -22,7 +22,7 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
 
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="min-w-0">
-          <h3 className="text-pretty font-mono text-lg font-semibold leading-snug text-foreground sm:text-xl">
+          <h3 className="text-pretty text-lg font-semibold leading-snug text-foreground/90 sm:text-xl">
             {experience.role}
           </h3>
 
@@ -38,9 +38,9 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
         </span>
       </div>
 
-      <p className="mt-4 text-sm leading-7 text-muted-foreground sm:mt-5">{experience.summary}</p>
+      <p className="mt-4 text-sm leading-7 text-foreground/70 sm:mt-5">{experience.summary}</p>
 
-      <ul className="mt-4 flex flex-col gap-2.5 text-sm leading-6 text-muted-foreground sm:mt-5">
+      <ul className="mt-4 flex flex-col gap-2.5 text-sm leading-6 text-foreground/70 sm:mt-5">
         {experience.responsibilities.slice(0, MAX_RESPONSIBILITIES).map((responsibility) => (
           <li key={responsibility} className="flex items-start gap-3">
             <span aria-hidden="true" className="mt-2 size-1.5 shrink-0 rounded-full bg-accent" />
@@ -54,7 +54,7 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
         {experience.technologies.slice(0, MAX_TECHNOLOGIES).map((technology) => (
           <span
             key={technology.name}
-            className="inline-flex min-h-7 items-center whitespace-nowrap rounded-md border border-border px-2.5 py-1 font-mono text-xs text-muted-foreground transition-colors hover:border-accent hover:text-foreground sm:px-3"
+            className="inline-flex min-h-7 items-center whitespace-nowrap rounded-md border border-border px-2.5 py-1 font-mono text-xs text-foreground/70 transition-colors hover:border-accent hover:text-foreground sm:px-3"
           >
             {technology.name}
           </span>

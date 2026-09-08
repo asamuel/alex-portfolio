@@ -38,49 +38,14 @@ export const developerPortfolio: Project = {
 
   architecture: [
     {
-      text: 'Server-first application built with ',
-    },
-    {
-      text: 'Next.js App Router',
-      emphasis: 'code',
-    },
-    {
-      text: ', ',
-    },
-    {
-      text: 'React',
-      emphasis: 'code',
-    },
-    {
-      text: ', and ',
-    },
-    {
-      text: 'TypeScript',
-      emphasis: 'code',
-    },
-    {
-      text: ', using ',
-    },
-    {
-      text: 'Tailwind CSS',
-      emphasis: 'code',
-    },
-    {
-      text: ' and ',
-    },
-    {
-      text: 'shadcn/ui',
-      emphasis: 'code',
-    },
-    {
-      text: ' for the presentation layer. Portfolio content is modeled through strongly typed constants and rendered through reusable sections and components. Client-side boundaries are intentionally limited to functionality that requires ',
+      text: 'Server-first application where content is modeled through strongly typed constants and rendered through reusable sections and components. Client-side boundaries are intentionally limited to functionality that requires ',
     },
     {
       text: 'browser interaction',
       emphasis: 'strong',
     },
     {
-      text: ', including theme switching and the contact form. A custom light and dark theme system uses CSS variables, localStorage, system color preference detection, and an initialization script executed before the application renders to minimize theme flashing. Contact submissions are processed through a Next.js Route Handler with server-side schema validation, honeypot protection, IP-based rate limiting, and Resend integration. The application is continuously deployed to ',
+      text: '. Contact submissions are processed through a Next.js Route Handler with server-side schema validation, honeypot protection, IP-based rate limiting, and Resend integration. The application is continuously deployed to ',
     },
     {
       text: 'Vercel',
@@ -95,6 +60,23 @@ export const developerPortfolio: Project = {
     },
     {
       text: ' managing the custom domain, DNS, and inbound email routing.',
+    },
+  ],
+  architectureHighlights: [
+    {
+      title: 'Server-first',
+      description:
+        'Content-heavy pages default to Server Components to keep client-side JavaScript focused.',
+    },
+    {
+      title: 'Explicit client boundaries',
+      description:
+        'Browser-dependent behavior is isolated to focused Client Components such as theme switching and contact interaction.',
+    },
+    {
+      title: 'Production integrations',
+      description:
+        'Deployment, DNS, email delivery, analytics, and monitoring are separated across dedicated production services.',
     },
   ],
 
@@ -148,20 +130,15 @@ export const developerPortfolio: Project = {
       category: 'tools',
     },
   ],
+  featuredTech: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS 4', 'Vercel'],
 
   keyContributions: [
     'Designed and implemented the complete portfolio architecture using the Next.js App Router.',
     'Built reusable and strongly typed sections for professional experience, skills, projects, profile information, and navigation.',
     'Created a custom responsive dark and light theme system using CSS variables, localStorage, system preference detection, and explicit client-side state synchronization.',
-    'Implemented pre-render theme initialization to reduce visible theme changes during application startup.',
     'Built a production contact workflow using React Hook Form, Zod, Next.js Route Handlers, and Resend.',
     'Implemented honeypot bot detection and IP-based request throttling for the public contact endpoint.',
-    'Configured the custom domain, DNS infrastructure, inbound email routing, and branded professional email.',
     'Implemented comprehensive SEO metadata, Open Graph metadata, Twitter metadata, sitemap generation, robots directives, web manifest, and custom social preview assets.',
-    'Implemented custom loading, error, and not-found experiences using Next.js App Router conventions.',
-    'Integrated Vercel Analytics and Speed Insights for production traffic and performance observability.',
-    'Configured continuous production deployment through GitHub and Vercel.',
-    'Optimized the production experience for performance, accessibility, SEO, responsive behavior, and maintainability.',
   ],
 
   keyChallenges: [
@@ -171,8 +148,6 @@ export const developerPortfolio: Project = {
     'Building a secure public contact workflow without exposing email provider credentials or backend configuration to the browser.',
     'Protecting the contact endpoint against automated submissions while keeping the contact experience frictionless and avoiding CAPTCHA.',
     'Coordinating Vercel deployment, Cloudflare DNS and email routing, and Resend transactional email under a single professional domain.',
-    'Supporting comprehensive SEO and social-sharing behavior while keeping metadata centralized and maintainable inside the App Router architecture.',
-    'Maintaining a clean visual system with minimal animation and decorative complexity while still creating a distinctive modern engineering portfolio.',
   ],
 
   engineeringDecisions: [
@@ -183,22 +158,14 @@ export const developerPortfolio: Project = {
           text: 'The portfolio uses ',
         },
         {
-          text: 'Server Components',
+          text: 'Server Components as the default rendering model',
           emphasis: 'strong',
         },
         {
-          text: ' as the default rendering model because most of the application is content-driven and does not require browser-side state. ',
-        },
-        {
-          text: 'Client Components',
-          emphasis: 'strong',
-        },
-        {
-          text: ' are introduced only where browser APIs or direct user interaction are necessary, including theme switching and the contact form. This keeps client-side boundaries explicit and avoids shipping unnecessary JavaScript.',
+          text: ' because most of the application is content-driven and does not require browser-side state. Client Components are introduced only where browser APIs or direct user interaction are necessary, including theme switching and the contact form.',
         },
       ],
     },
-
     {
       title: 'Custom theme without an additional dependency',
       description: [
@@ -210,30 +177,22 @@ export const developerPortfolio: Project = {
           emphasis: 'code',
         },
         {
-          text: ', system preference detection through ',
+          text: ', ',
         },
         {
           text: 'matchMedia',
           emphasis: 'code',
         },
         {
-          text: ', and a small initialization script executed before hydration. The behavior remains explicit and fully aligned with the portfolio design tokens.',
+          text: ', and a small initialization script executed before hydration.',
         },
       ],
     },
-
     {
       title: 'Server-side contact processing',
       description: [
         {
-          text: 'The contact form performs client-side validation for user experience, but ',
-        },
-        {
-          text: 'the server remains the source of trust',
-          emphasis: 'strong',
-        },
-        {
-          text: '. Submissions are processed through ',
+          text: 'The contact form performs client-side validation for user experience, but the server remains the source of trust. Submissions are processed through ',
         },
         {
           text: '/api/contact',
@@ -251,26 +210,19 @@ export const developerPortfolio: Project = {
         },
       ],
     },
-
     {
       title: 'Low-friction abuse protection',
       description: [
         {
-          text: 'I chose a ',
+          text: 'I chose a honeypot and lightweight IP-based rate limiting instead of adding CAPTCHA. The goal was to reduce basic automated abuse while keeping the contact experience frictionless for legitimate users.',
         },
+      ],
+    },
+    {
+      title: 'Framework-native SEO',
+      description: [
         {
-          text: 'honeypot',
-          emphasis: 'strong',
-        },
-        {
-          text: ' and lightweight ',
-        },
-        {
-          text: 'IP-based rate limiting',
-          emphasis: 'strong',
-        },
-        {
-          text: ' instead of adding CAPTCHA. The goal was to reduce basic automated abuse while preserving a frictionless contact experience. Detected honeypot submissions intentionally receive a normal success response without triggering email delivery.',
+          text: 'SEO and social metadata are implemented through the Next.js metadata APIs, including Open Graph, Twitter metadata, sitemap generation, robots directives, and per-project metadata.',
         },
       ],
     },
@@ -281,14 +233,7 @@ export const developerPortfolio: Project = {
       title: 'Server-only credentials',
       description: [
         {
-          text: 'Resend API credentials, sender configuration, and destination email settings are stored in ',
-        },
-        {
-          text: 'environment variables',
-          emphasis: 'code',
-        },
-        {
-          text: ' and used exclusively from server-side code. The browser never communicates directly with the email provider.',
+          text: 'Resend credentials and email configuration are stored in environment variables and used exclusively from server-side code. The browser never communicates directly with the email provider.',
         },
       ],
     },
@@ -296,21 +241,14 @@ export const developerPortfolio: Project = {
       title: 'Server-side input validation',
       description: [
         {
-          text: 'The contact form validates input in the browser for immediate feedback, but every submission is validated again with ',
+          text: 'Contact submissions are validated again with ',
         },
         {
           text: 'Zod',
           emphasis: 'code',
         },
         {
-          text: ' inside the Route Handler. ',
-        },
-        {
-          text: 'Server-side validation',
-          emphasis: 'strong',
-        },
-        {
-          text: ' defines the real trust boundary.',
+          text: ' inside the Route Handler, even though the form also performs client-side validation.',
         },
       ],
     },
@@ -325,7 +263,7 @@ export const developerPortfolio: Project = {
           emphasis: 'code',
         },
         {
-          text: ' field is invisible to normal users but may be populated by simple automated bots. When that happens, the endpoint returns a normal success response without sending an email, reducing the chance of exposing the detection mechanism.',
+          text: ' field helps identify simple automated submissions. Detected submissions receive a normal success response without triggering email delivery.',
         },
       ],
     },
@@ -333,29 +271,7 @@ export const developerPortfolio: Project = {
       title: 'Request throttling',
       description: [
         {
-          text: 'The public contact endpoint applies lightweight IP-based throttling with a limit of ',
-        },
-        {
-          text: 'five requests within a ten-minute window',
-          emphasis: 'strong',
-        },
-        {
-          text: ' for the active server instance. This provides a practical first layer of abuse protection without introducing external persistence or infrastructure.',
-        },
-      ],
-    },
-    {
-      title: 'Controlled failure responses',
-      description: [
-        {
-          text: 'Validation failures, throttled requests, email delivery errors, and unexpected server exceptions return ',
-        },
-        {
-          text: 'controlled responses',
-          emphasis: 'strong',
-        },
-        {
-          text: ' that avoid exposing provider details, credentials, stack traces, or other internal implementation information.',
+          text: 'The public contact endpoint applies lightweight IP-based throttling with a five-request limit over a ten-minute window within the active server instance.',
         },
       ],
     },
@@ -366,10 +282,8 @@ export const developerPortfolio: Project = {
     'Achieved approximately 99 Performance and 100 Accessibility, Best Practices, and SEO scores in Lighthouse Desktop testing.',
     'Established a centralized professional destination for technical experience, projects, engineering capabilities, professional branding, and recruiter contact.',
     'Implemented a production contact workflow connected to the branded contact@alexbenavidez.dev professional email identity.',
-    'Established automated production deployments through the GitHub and Vercel workflow.',
     'Integrated production analytics and performance monitoring through Vercel Analytics and Speed Insights.',
     'Created an extensible project architecture capable of evolving from project cards into detailed technical case studies in Release 2.',
-    'Established a production foundation that can evolve through additional releases without requiring a redesign of the core portfolio architecture.',
   ],
 
   lessonsLearned: [
@@ -377,14 +291,7 @@ export const developerPortfolio: Project = {
       title: 'Architecture matters even for small products',
       description: [
         {
-          text: 'A portfolio does not need enterprise-level complexity, but decisions around rendering, content modeling, accessibility, deployment, and security still benefit from ',
-        },
-        {
-          text: 'clear boundaries and intentional architecture',
-          emphasis: 'strong',
-        },
-        {
-          text: '. Keeping the system simple became easier once each responsibility had a defined place.',
+          text: 'A portfolio does not need enterprise complexity, but rendering, content modeling, accessibility, deployment, and security still benefit from clear boundaries and intentional architecture.',
         },
       ],
     },
@@ -399,40 +306,7 @@ export const developerPortfolio: Project = {
           emphasis: 'code',
         },
         {
-          text: ' for content-heavy pages made it easier to keep client-side behavior focused. ',
-        },
-        {
-          text: 'Client Components were added only where interaction or browser APIs provided real value.',
-          emphasis: 'accent',
-        },
-        {
-          text: ' This reduced unnecessary JavaScript and made rendering responsibilities easier to reason about.',
-        },
-      ],
-    },
-    {
-      title: 'Theme systems have subtle edge cases',
-      description: [
-        {
-          text: 'Implementing a custom theme looked simple initially, but required careful handling of ',
-        },
-        {
-          text: 'localStorage',
-          emphasis: 'code',
-        },
-        {
-          text: ', ',
-        },
-        {
-          text: 'matchMedia',
-          emphasis: 'code',
-        },
-        {
-          text: ', initialization timing, hydration, and persisted user preference. ',
-        },
-        {
-          text: 'Small UI features can introduce meaningful architectural considerations.',
-          emphasis: 'strong',
+          text: ' for content-heavy pages made it easier to keep client-side behavior focused and avoid unnecessary JavaScript.',
         },
       ],
     },
@@ -440,14 +314,7 @@ export const developerPortfolio: Project = {
       title: 'Security should match the actual risk',
       description: [
         {
-          text: 'The public contact form did not justify adding a heavy security layer such as CAPTCHA, but it still required protection against malformed input and basic automated abuse. ',
-        },
-        {
-          text: 'A lightweight combination of server validation, honeypot detection, and request throttling',
-          emphasis: 'strong',
-        },
-        {
-          text: ' provided an appropriate balance between protection and user experience.',
+          text: 'The public contact form required protection against malformed input and basic automated abuse, but not a heavy security layer. Server validation, honeypot detection, and request throttling provided an appropriate balance.',
         },
       ],
     },
@@ -455,26 +322,7 @@ export const developerPortfolio: Project = {
       title: 'Production concerns are part of the product',
       description: [
         {
-          text: 'SEO, accessibility, analytics, performance monitoring, transactional email, DNS configuration, and deployment are not merely finishing touches. ',
-        },
-        {
-          text: 'They are part of delivering a complete production application.',
-          emphasis: 'accent',
-        },
-        {
-          text: ' Treating them as first-class concerns made the portfolio more representative of real-world software engineering work.',
-        },
-      ],
-    },
-    {
-      title: 'Simple abstractions age better',
-      description: [
-        {
-          text: 'Typed constants, reusable components, semantic HTML, and small focused utilities were often enough without introducing additional libraries or complex state management. ',
-        },
-        {
-          text: 'The simplest abstraction that clearly expresses the responsibility is usually the easiest to maintain.',
-          emphasis: 'strong',
+          text: 'SEO, accessibility, analytics, performance monitoring, transactional email, DNS configuration, and deployment are part of delivering a complete production application, not just finishing touches.',
         },
       ],
     },
