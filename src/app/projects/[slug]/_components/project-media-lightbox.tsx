@@ -6,6 +6,8 @@ import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@/components/
 
 import type { ProjectMedia } from '@/types/project-media';
 
+import { ProjectResponsiveMedia } from './project-responsive-media';
+
 type ProjectMediaLightboxProps = {
   media: ProjectMedia;
   children: React.ReactNode;
@@ -18,13 +20,13 @@ export const ProjectMediaLightbox = ({ media, children }: ProjectMediaLightboxPr
         <button
           type="button"
           className="
-          group
-          block
-          w-full
-          cursor-zoom-in
-          overflow-hidden
-          text-left
-        "
+            group
+            block
+            w-full
+            cursor-zoom-in
+            overflow-hidden
+            text-left
+          "
           aria-label={`Open ${media.alt}`}
         >
           {children}
@@ -49,7 +51,20 @@ export const ProjectMediaLightbox = ({ media, children }: ProjectMediaLightboxPr
       >
         <DialogTitle className="sr-only">{media.alt}</DialogTitle>
 
-        {media.type === 'themed' ? (
+        {media.type === 'responsive-themed' ? (
+          <ProjectResponsiveMedia
+            media={media}
+            loading="eager"
+            reserveSpace={false}
+            className="
+              h-auto
+              max-h-[88vh]
+              w-auto
+              max-w-full
+              object-contain
+            "
+          />
+        ) : media.type === 'themed' ? (
           <>
             <Image
               src={media.src.light}

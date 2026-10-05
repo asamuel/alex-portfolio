@@ -348,16 +348,24 @@ export const developerPortfolio: Project = {
       height: 851,
     },
     {
-      type: 'themed',
+      type: 'responsive-themed',
       src: {
-        light: '/projects/developer-portfolio/architecture-diagram-light.webp',
-        dark: '/projects/developer-portfolio/architecture-diagram-dark.webp',
+        desktop: {
+          light: '/projects/developer-portfolio/architecture-desktop-light.webp',
+          dark: '/projects/developer-portfolio/architecture-desktop-dark.webp',
+          width: 737,
+          height: 1019,
+        },
+        mobile: {
+          light: '/projects/developer-portfolio/architecture-mobile-light.webp',
+          dark: '/projects/developer-portfolio/architecture-mobile-dark.webp',
+          width: 923,
+          height: 1704,
+        },
       },
       alt: 'Developer portfolio application architecture diagram',
       caption: 'High-level architecture of the Next.js application and production services',
       category: 'architecture',
-      width: 737,
-      height: 1019,
     },
   ],
 

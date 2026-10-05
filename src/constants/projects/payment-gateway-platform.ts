@@ -5,25 +5,71 @@ export const paymentGatewayPlatform: Project = {
   slug: 'payment-gateway-platform',
   status: 'completed',
   summary:
-    'Enterprise multi-tenant payment gateway integrated with Cybersource for secure transaction orchestration.',
+    'Multi-tenant enterprise payment gateway that centralized secure transaction orchestration, tenant-aware access control, and Cybersource payment processing for multiple business units.',
+
   overview: [
     {
-      text: 'Designed and developed an enterprise-grade payment gateway platform focused on secure ',
+      text: 'Designed and developed a ',
     },
     {
-      text: 'multi-tenant',
+      text: 'multi-tenant payment gateway platform',
       emphasis: 'strong',
     },
     {
-      text: ' transaction processing. The platform centralized authentication, authorization, tenant isolation, and transaction orchestration, enabling multiple business units to operate under a unified architecture while maintaining strong security boundaries and operational independence.',
+      text: ' focused on centralizing secure transaction processing for multiple business units. The platform unified authentication, authorization, tenant isolation, and payment orchestration behind a single operational model, allowing teams to onboard and operate payment flows with consistent security boundaries, auditability, and operational support.',
     },
   ],
+
   role: 'Senior Full Stack Engineer',
+
   architecture: [
     {
-      text: 'Monolithic architecture built with ASP.NET Core MVC using Razor Views for server-rendered UI, Material UI for component styling, IdentityServer for authentication and authorization, PostgreSQL for persistence, and Cybersource as the external payment provider.',
+      text: 'Designed as a ',
+    },
+    {
+      text: 'modular monolith',
+      emphasis: 'strong',
+    },
+    {
+      text: ' built with ',
+    },
+    {
+      text: 'ASP.NET Core MVC',
+      emphasis: 'code',
+    },
+    {
+      text: ' and ',
+    },
+    {
+      text: 'Razor Views',
+      emphasis: 'code',
+    },
+    {
+      text: ', with ',
+    },
+    {
+      text: 'IdentityServer',
+      emphasis: 'code',
+    },
+    {
+      text: ' handling authentication and authorization, ',
+    },
+    {
+      text: 'PostgreSQL',
+      emphasis: 'code',
+    },
+    {
+      text: ' as the persistence layer, and ',
+    },
+    {
+      text: 'Cybersource',
+      emphasis: 'code',
+    },
+    {
+      text: ' as the external payment provider. The architecture kept tenant context, transaction workflows, and operational concerns centralized while preserving clear internal separation of responsibilities.',
     },
   ],
+
   techStack: [
     {
       name: 'C#',
@@ -70,28 +116,31 @@ export const paymentGatewayPlatform: Project = {
       category: 'integration',
     },
   ],
-  // Payment Gateway Platform
+
   featuredTech: ['.NET 8', 'ASP.NET Core MVC', 'IdentityServer', 'PostgreSQL', 'Cybersource'],
+
   keyContributions: [
-    'Designed the multi-tenant authentication and authorization model.',
-    'Implemented secure payment processing flows with Cybersource integration.',
-    'Built tenant-aware transaction orchestration and validation pipelines.',
-    'Developed role-based access control and permission management.',
-    'Implemented audit logging for financial traceability.',
-    'Created transaction monitoring dashboards for internal operations.',
+    'Designed and implemented the multi-tenant authentication and authorization model for a shared payment platform.',
+    'Built secure payment processing flows integrated with Cybersource.',
+    'Implemented tenant-aware transaction orchestration, validation, and processing pipelines.',
+    'Developed role-based access control and permission management across tenants and platform modules.',
+    'Introduced audit logging to improve transaction traceability and operational investigation.',
+    'Built internal dashboards to monitor transaction activity and support platform operations.',
   ],
+
   keyChallenges: [
-    'Designed tenant isolation within a monolithic architecture while preserving scalability.',
-    'Solved Cybersource request signing, validation, and transaction lifecycle management.',
-    'Implemented centralized authentication flows across multiple tenants using IdentityServer.',
-    'Ensured transactional consistency and security across payment operations.',
+    'Designing tenant isolation inside a shared monolithic architecture without compromising maintainability or scalability.',
+    'Implementing Cybersource request signing, validation, and end-to-end transaction lifecycle handling.',
+    'Centralizing authentication and authorization flows across multiple tenants with IdentityServer.',
+    'Preserving transactional consistency and security across critical payment operations.',
   ],
+
   engineeringDecisions: [
     {
-      title: 'Tenant isolation inside a monolithic architecture',
+      title: 'Tenant isolation inside a shared application',
       description: [
         {
-          text: 'The platform was designed as a multi-tenant system within a single ASP.NET Core application. Tenant context was incorporated into authentication, authorization, transaction processing, and data access so multiple business units could share the platform while maintaining clear operational boundaries.',
+          text: 'The platform was built as a shared multi-tenant application, so tenant context became a first-class architectural concern. Authentication, authorization, transaction processing, and data access all incorporated tenant awareness to allow multiple business units to share the platform without losing operational separation.',
         },
       ],
     },
@@ -120,12 +169,12 @@ export const paymentGatewayPlatform: Project = {
           emphasis: 'code',
         },
         {
-          text: ' for secure identity propagation. Role-based access control and tenant-aware permissions were handled as platform concerns instead of being implemented independently by each module.',
+          text: ' for secure identity propagation. Role-based access control and tenant-scoped permissions were treated as platform concerns instead of being reimplemented independently by each functional area.',
         },
       ],
     },
     {
-      title: 'Centralized payment orchestration',
+      title: 'Dedicated payment orchestration boundary',
       description: [
         {
           text: 'Integration with ',
@@ -135,7 +184,7 @@ export const paymentGatewayPlatform: Project = {
           emphasis: 'code',
         },
         {
-          text: ' was kept behind a controlled transaction flow responsible for request preparation, signing, validation, provider communication, and transaction lifecycle handling. This reduced duplicated integration logic and kept payment behavior easier to maintain.',
+          text: ' was kept behind a controlled orchestration flow responsible for request preparation, signing, validation, provider communication, and transaction lifecycle handling. This reduced duplicated provider logic and made payment behavior easier to evolve and support.',
         },
       ],
     },
@@ -143,23 +192,15 @@ export const paymentGatewayPlatform: Project = {
       title: 'Transactional consistency over distributed complexity',
       description: [
         {
-          text: 'The architecture prioritized predictable transactional behavior over introducing unnecessary distributed components. Keeping the core payment workflow within one application boundary simplified consistency, validation, and operational support while responsibilities remained separated internally.',
+          text: 'The architecture prioritized predictable transactional behavior over introducing unnecessary distributed components. Keeping the core workflow inside one application boundary simplified consistency, validation, support, and operational troubleshooting while still maintaining strong internal separation of responsibilities.',
         },
       ],
     },
     {
-      title: 'Auditability as part of the workflow',
+      title: 'Operational visibility as a platform capability',
       description: [
         {
-          text: 'Audit logging was incorporated into the payment workflow so relevant transaction and authorization activity could be traced during operational investigation and support.',
-        },
-      ],
-    },
-    {
-      title: 'Operational visibility',
-      description: [
-        {
-          text: 'Internal dashboards exposed transaction activity and processing state to the teams responsible for operating the platform. The goal was not only to execute payment flows, but also to make their behavior easier to inspect and support.',
+          text: 'The platform was designed not only to execute payment flows but also to make them observable. Audit logging and internal dashboards were incorporated so transaction state and operational behavior could be inspected more easily during support and incident investigation.',
         },
       ],
     },
@@ -199,12 +240,12 @@ export const paymentGatewayPlatform: Project = {
           emphasis: 'code',
         },
         {
-          text: ' supporting authenticated application flows. Centralizing authentication helped avoid duplicated security logic across tenants and modules.',
+          text: ' supporting authenticated application flows. Centralizing authentication reduced duplicated security logic and kept identity handling consistent across tenants and modules.',
         },
       ],
     },
     {
-      title: 'Secure provider integration',
+      title: 'Secure provider integration boundary',
       description: [
         {
           text: 'Requests sent to ',
@@ -214,7 +255,7 @@ export const paymentGatewayPlatform: Project = {
           emphasis: 'code',
         },
         {
-          text: ' followed a controlled request construction, signing, validation, and response-handling process. Provider-specific security logic remained inside the payment integration boundary rather than being distributed across the application.',
+          text: ' followed a controlled process for request construction, signing, validation, and response handling. Provider-specific security logic remained inside the integration boundary rather than being scattered across the application.',
         },
       ],
     },
@@ -230,7 +271,7 @@ export const paymentGatewayPlatform: Project = {
       title: 'Financial traceability',
       description: [
         {
-          text: 'Relevant transaction and authorization activity was recorded to provide a clearer operational history and support investigation when payment issues required analysis.',
+          text: 'Relevant transaction and authorization activity was recorded to support operational traceability and simplify investigation when payment issues required analysis.',
         },
       ],
     },
@@ -243,41 +284,94 @@ export const paymentGatewayPlatform: Project = {
       ],
     },
   ],
-  impact: [
-    'Successfully deployed into production in an enterprise environment.',
-    'Improved payment reliability across multiple business units.',
-    'Reduced onboarding complexity for new tenants.',
-    'Strengthened security, auditability, and operational monitoring.',
-    'Established a scalable authentication foundation for future platform growth.',
+
+  lessonsLearned: [
+    {
+      title: 'Tenant context must be a platform concern',
+      description: [
+        {
+          text: 'In multi-tenant systems, tenant awareness cannot be treated as a late validation step. It needs to be present from authentication through authorization, data access, and workflow execution.',
+        },
+      ],
+    },
+    {
+      title: 'Payment integrations deserve a dedicated orchestration layer',
+      description: [
+        {
+          text: 'Keeping provider-specific signing, validation, and lifecycle handling inside a controlled orchestration boundary made the platform easier to maintain and reduced duplicated logic across modules.',
+        },
+      ],
+    },
+    {
+      title: 'Operational tooling matters as much as core transaction logic',
+      description: [
+        {
+          text: 'Dashboards and audit trails were essential for supportability. In payment systems, being able to understand what happened is almost as important as executing the transaction correctly.',
+        },
+      ],
+    },
+    {
+      title: 'A monolith can still be the right choice',
+      description: [
+        {
+          text: 'For this platform, keeping the system inside a single application boundary reduced unnecessary complexity and made consistency easier to preserve, as long as internal responsibilities remained clearly structured.',
+        },
+      ],
+    },
   ],
+
+  impact: [
+    'Deployed a shared enterprise payment platform for multiple business units.',
+    'Improved consistency and reliability across payment processing flows.',
+    'Reduced onboarding complexity for new tenants by centralizing identity and transaction orchestration.',
+    'Strengthened platform security, auditability, and operational visibility.',
+    'Established a scalable foundation for future platform growth and additional payment capabilities.',
+  ],
+
   media: [
     {
-      type: 'standard',
-      src: '/projects/default.webp',
-      alt: 'Payment gateway dashboard preview',
-      caption: 'Main transaction dashboard overview',
-      category: 'preview',
-      width: 1536,
-      height: 1024,
-    },
-    {
-      type: 'standard',
-      src: '/projects/default.webp',
-      alt: 'Payment processing flow diagram',
-      caption: 'Cybersource payment lifecycle orchestration',
+      type: 'responsive-themed',
+      src: {
+        desktop: {
+          light: '/projects/payment-gateway-platform/payment-flow-desktop-light.webp',
+          dark: '/projects/payment-gateway-platform/payment-flow-desktop-dark.webp',
+          width: 1536,
+          height: 1024,
+        },
+        mobile: {
+          light: '/projects/payment-gateway-platform/payment-flow-mobile-light.webp',
+          dark: '/projects/payment-gateway-platform/payment-flow-mobile-dark.webp',
+          width: 941,
+          height: 1672,
+        },
+      },
+      alt: 'Payment transaction lifecycle diagram',
+      caption:
+        'Sanitized payment lifecycle from tenant authorization through provider processing, validation, persistence, audit, and response.',
       category: 'flow',
-      width: 1536,
-      height: 1024,
     },
     {
-      type: 'standard',
-      src: '/projects/default.webp',
-      alt: 'Payment gateway platform architecture diagram',
-      caption: 'Monolithic architecture using ASP.NET Core MVC, IdentityServer, and PostgreSQL',
+      type: 'responsive-themed',
+      src: {
+        desktop: {
+          light: '/projects/payment-gateway-platform/architecture-desktop-light.webp',
+          dark: '/projects/payment-gateway-platform/architecture-desktop-dark.webp',
+          width: 1536,
+          height: 1024,
+        },
+        mobile: {
+          light: '/projects/payment-gateway-platform/architecture-mobile-light.webp',
+          dark: '/projects/payment-gateway-platform/architecture-mobile-dark.webp',
+          width: 1122,
+          height: 1402,
+        },
+      },
+      alt: 'Payment gateway multi-tenant architecture diagram',
+      caption:
+        'High-level architecture showing tenant-aware identity, transaction orchestration, persistence, and Cybersource integration.',
       category: 'architecture',
-      width: 1536,
-      height: 1024,
     },
   ],
+
   isPrivate: true,
 };

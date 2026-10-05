@@ -2,39 +2,16 @@
 
 import { Moon, Sun } from 'lucide-react';
 import { useCallback, useSyncExternalStore } from 'react';
-import { applyTheme, readStoredTheme, THEME_STORAGE_KEY, type Theme } from '@/lib/theme';
 
-let themeCache: Theme | null = null;
-const listeners = new Set<() => void>();
-
-const subscribe = (onStoreChange: () => void) => {
-  listeners.add(onStoreChange);
-
-  return () => {
-    listeners.delete(onStoreChange);
-  };
-};
-
-const getSnapshot = (): Theme => {
-  if (themeCache === null) {
-    themeCache = readStoredTheme();
-    applyTheme(themeCache);
-  }
-
-  return themeCache;
-};
-
-const getServerSnapshot = (): Theme => 'light';
-
-const updateTheme = (theme: Theme) => {
-  themeCache = theme;
-  applyTheme(theme);
-  localStorage.setItem(THEME_STORAGE_KEY, theme);
-  listeners.forEach((listener) => listener());
-};
+import {
+  getThemeServerSnapshot,
+  getThemeSnapshot,
+  subscribeToTheme,
+  updateTheme,
+} from '@/lib/theme-store';
 
 const ThemeToggle = () => {
-  const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const theme = useSyncExternalStore(subscribeToTheme, getThemeSnapshot, getThemeServerSnapshot);
 
   const toggleTheme = useCallback(() => {
     updateTheme(theme === 'dark' ? 'light' : 'dark');
