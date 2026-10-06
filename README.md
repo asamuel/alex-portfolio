@@ -35,7 +35,7 @@ Release 2 expands the portfolio with detailed technical case studies designed to
 
 <p align="center">
   <img
-    src="./public/readme/portfolio-preview.png"
+    src="./public/readme/portfolio-preview.webp"
     alt="Portfolio homepage preview"
     width="100%"
   />
@@ -154,18 +154,18 @@ Focus areas:
 
 ## Tech Stack
 
-| Category | Technologies |
-| --- | --- |
-| Framework | Next.js 16 |
-| UI | React 19 |
-| Language | TypeScript |
-| Styling | Tailwind CSS 4 |
-| Components | shadcn/ui |
-| Forms | React Hook Form + Zod |
-| Email | Resend |
-| Analytics | Vercel Analytics + Speed Insights |
-| Hosting | Vercel |
-| DNS | Cloudflare |
+| Category   | Technologies                      |
+| ---------- | --------------------------------- |
+| Framework  | Next.js 16                        |
+| UI         | React 19                          |
+| Language   | TypeScript                        |
+| Styling    | Tailwind CSS 4                    |
+| Components | shadcn/ui                         |
+| Forms      | React Hook Form + Zod             |
+| Email      | Resend                            |
+| Analytics  | Vercel Analytics + Speed Insights |
+| Hosting    | Vercel                            |
+| DNS        | Cloudflare                        |
 
 ---
 
@@ -207,12 +207,12 @@ Only the asset required by the current viewport and theme is rendered.
 
 The production project case-study page achieved:
 
-| Metric | Score |
-| --- | ---: |
-| Performance | 100 |
-| Accessibility | 100 |
-| Best Practices | 100 |
-| SEO | 100 |
+| Metric         | Score |
+| -------------- | ----: |
+| Performance    |   100 |
+| Accessibility  |   100 |
+| Best Practices |   100 |
+| SEO            |   100 |
 
 Measured with Lighthouse against the production deployment.
 
@@ -228,7 +228,7 @@ Additional optimizations include:
 
 <p align="center">
   <img
-    src="./public/readme/lighthouse-desktop.png"
+    src="./public/readme/lighthouse-desktop.webp"
     alt="Lighthouse production results"
     width="100%"
   />
